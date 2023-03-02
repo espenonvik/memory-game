@@ -1,6 +1,6 @@
 # memory-game
 
-Memeory game is an excercise from the Fireship.io course ***React - The full course***. 
+Memory game is an excercise from the Fireship.io course ***React - The full course***. 
 
 The app is implemented as a PWA and built with a React frontend.
 
