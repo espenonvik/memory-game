@@ -4,6 +4,7 @@ import Card from "./components/Card";
 import CardType from "./shared/interfaces/card";
 import Header from "./components/Header";
 import "./App.css";
+import useAppBadge from "./hooks/useAppBadge";
 
 const App = () => {
   const [cards, setCards] = useState(shuffle);
@@ -11,6 +12,7 @@ const App = () => {
   const [pickTwo, setPickTwo] = useState<CardType | null>(null);
   const [readyForPick, setReadyForPick] = useState(true);
   const [wins, setWins] = useState(0);
+  const [setBadge, clearBadge] = useAppBadge();
 
   const handleOnClick = (card: CardType): void => {
     if (readyForPick) {
@@ -19,12 +21,14 @@ const App = () => {
   };
 
   const handleTurn = (): void => {
+    setBadge();
     setPickOne(null);
     setPickTwo(null);
     setReadyForPick(true);
   };
 
   const handleNewGame = () => {
+    clearBadge();
     handleTurn();
     setWins(0);
     setCards(shuffle);
@@ -66,8 +70,9 @@ const App = () => {
       setWins(wins + 1);
       handleTurn();
       setCards(shuffle);
+      setBadge();
     }
-  }, [cards, wins]);
+  }, [cards, wins, setBadge]);
 
   return (
     <>
@@ -78,6 +83,7 @@ const App = () => {
 
           return (
             <Card
+              key={id}
               id={id}
               image={image}
               matched={matched}
