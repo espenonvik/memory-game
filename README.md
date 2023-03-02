@@ -13,3 +13,6 @@ The app is implemented as a Progressive Web App (PWA) and built with a React fro
 > npm install
 > npm start
 ```
+
+## Live demo
+https://tidya-memento-game.web.app/
