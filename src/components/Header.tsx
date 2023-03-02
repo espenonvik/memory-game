@@ -8,14 +8,14 @@ const Header = ({
   wins: number;
 }) => {
   useEffect(() => {
-    document.title = `${wins} wins`;
+    document.title = `Memento - ${wins} wins`;
   }, [wins]);
 
   return (
     <header className="header">
-      <h4>wins: {wins}</h4>
-      <h3>Memory game for developers</h3>
-      <button onClick={handleNewGame}>New Game</button>
+      <h4>Wins: {wins}</h4>
+      <h3>Memento 🔥</h3>
+      <button onClick={handleNewGame}>Reset wins</button>
     </header>
   );
 };
