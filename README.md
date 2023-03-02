@@ -1,4 +1,4 @@
-# memory-game
+# Memory game
 
 Memory game is an excercise from the Fireship.io course ***React - The full course***. 
 
