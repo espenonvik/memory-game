@@ -15,7 +15,7 @@ const Header = ({
     <header className="header">
       <h4>Wins: {wins}</h4>
       <h3>Memento 🔥</h3>
-      <button onClick={handleNewGame}>Reset wins</button>
+      <button onClick={handleNewGame}>Start over</button>
     </header>
   );
 };

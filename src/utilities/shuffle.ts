@@ -1,4 +1,4 @@
-import CardType from "../shared/interfaces/card";
+import CardType from "../shared/interfaces/types";
 
 const shuffle = (): CardType[] => {
   const assets = [
@@ -12,14 +12,17 @@ const shuffle = (): CardType[] => {
     { image: "/assets/ts.png" },
   ];
 
-  return [...assets, ...assets]
-    .sort(() => Math.random() - 0.5)
-    .map((card) => ({
-      ...card,
-      id: Math.random(),
-      selected: false,
-      matched: false,
-    }));
+  const cards = [...assets, ...assets].map((card) => ({
+    ...card,
+    id: Math.random(),
+    selected: false,
+    matched: false,
+  }));
+
+  // @ts-ignore
+  return window.Cypress
+    ? cards.sort((a, b) => a.image.localeCompare(b.image))
+    : cards.sort(() => Math.random() - 0.5);
 };
 
 export default shuffle;

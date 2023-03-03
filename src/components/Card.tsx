@@ -1,5 +1,5 @@
 import React from "react";
-import CardType from "../shared/interfaces/card";
+import CardType from "../shared/interfaces/types";
 
 interface Props extends CardType {
   onClick: () => void;

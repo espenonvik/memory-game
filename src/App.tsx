@@ -1,7 +1,8 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import shuffle from "./utilities/shuffle";
 import Card from "./components/Card";
-import CardType from "./shared/interfaces/card";
+import CardType from "./shared/interfaces/types";
 import Header from "./components/Header";
 import "./App.css";
 import useAppBadge from "./hooks/useAppBadge";
@@ -72,7 +73,7 @@ const App = () => {
       setCards(shuffle);
       setBadge();
     }
-  }, [cards, wins, setBadge]);
+  }, [cards, wins]);
 
   return (
     <>
