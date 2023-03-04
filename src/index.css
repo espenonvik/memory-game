@@ -127,6 +127,9 @@ button {
   transform: var(--rotate-90);
   transition-delay: 0s;
 }
+.matched {
+  opacity: 0.95;
+}
 @keyframes enter {
   from {
     opacity: 0;
